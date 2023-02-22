@@ -1,0 +1,49 @@
+.wrapper {
+	background: #f8f9fa;
+}
+
+.header {
+	display: flex;
+	gap: 10px;
+	padding-top: 17px;
+	padding-bottom: 17px;
+
+	.button {
+		background: #dfe2e4;
+		border-radius: 6px;
+		border: none;
+		box-sizing: border-box;
+		padding: 0px;
+	}
+	.icon {
+		display: block;
+		width: 20px;
+		height: 20px;
+		margin: 10px;
+	}
+}
+
+.main {
+	width: 100%;
+	.control {
+		margin-bottom: 17px;
+		border-bottom: 1px solid #dfe2e4;
+		.block {
+			display: flex;
+			gap: 69px;
+			margin-bottom: 24px;
+
+			.text {
+				font-family: "Circular Std";
+				font-weight: 500;
+				font-size: 18px;
+				line-height: 23px;
+				color: #000000;
+			}
+
+			& div {
+				flex-grow: 2;
+			}
+		}
+	}
+}
