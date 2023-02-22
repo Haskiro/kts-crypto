@@ -25,6 +25,7 @@ const FilterItem: FC<IFilterItem> = ({
 			})}
 			onClick={() => onChose(value)}
 			{...otherProps}
+			tabIndex={0}
 		>
 			{value}
 		</li>

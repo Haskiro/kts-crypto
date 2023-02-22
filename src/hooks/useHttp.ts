@@ -6,9 +6,9 @@ type Process = "idle" | "loading" | "succeeded" | "error";
 
 type RequestProps = {
 	url: string;
-	data: Record<string, string>;
-	method: "get" | "post";
-	headers: Record<string, string>;
+	data?: Record<string, string>;
+	method?: "get" | "post";
+	headers?: Record<string, string>;
 };
 
 export const useHttp = () => {
