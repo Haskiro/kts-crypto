@@ -25,7 +25,7 @@ const Card: React.FC<CardProps> = ({
 	onClick,
 }) => {
 	return (
-		<div className={styles.card} onClick={onClick}>
+		<div className={styles.card} onClick={onClick} tabIndex={0}>
 			<div className={styles.info}>
 				<img
 					className={styles.image}

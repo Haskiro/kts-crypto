@@ -6,6 +6,7 @@ import { useHttp } from "@hooks/useHttp";
 import { ICoin } from "@interfaces/coin.interface";
 import cn from "classnames";
 
+import Button from "./components/Button";
 import Card from "./components/Card";
 import CoinList from "./components/CoinList";
 import Filters from "./components/Filters";
@@ -19,7 +20,7 @@ const Market: FC = () => {
 
 	useEffect(() => {
 		request({
-			url: `${API_ENDPOINTS.COINS}markets?vs_currency=usd&per_page=10&page=1`,
+			url: `${API_ENDPOINTS.COINS}markets?vs_currency=usd&per_page=8&page=1`,
 		}).then((data) => setCoinList(data));
 		setProcess("succeeded");
 	}, []);
@@ -28,9 +29,9 @@ const Market: FC = () => {
 		<div className={styles.wrapper}>
 			<header className={cn("container", styles.header)}>
 				<Input value="" onChange={() => {}} />
-				<button type="button" className={styles.button}>
+				<Button className={styles.button}>
 					<SearchIcon className={styles.icon} />
-				</button>
+				</Button>
 			</header>
 			<main className={styles.main}>
 				<div className={styles.control}>

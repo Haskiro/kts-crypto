@@ -1,8 +1,8 @@
 import React from "react";
 
+import Loader, { LoaderSize } from "@components/Loader";
 import cn from "classnames";
 
-import { Loader, LoaderSize } from "../Loader/Loader";
 import "./Button.scss";
 
 export type ButtonProps = React.PropsWithChildren<{
@@ -14,7 +14,7 @@ export type ButtonProps = React.PropsWithChildren<{
 }> &
 	React.ButtonHTMLAttributes<HTMLButtonElement>;
 
-export const Button: React.FC<ButtonProps> = (props) => {
+const Button: React.FC<ButtonProps> = (props) => {
 	const {
 		loading = false,
 		children,
@@ -38,3 +38,5 @@ export const Button: React.FC<ButtonProps> = (props) => {
 		</button>
 	);
 };
+
+export default Button;

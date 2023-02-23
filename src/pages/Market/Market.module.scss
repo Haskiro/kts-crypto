@@ -1,5 +1,8 @@
-.wrapper {
+:global(body) {
 	background: #f8f9fa;
+}
+
+.wrapper {
 }
 
 .header {
@@ -9,11 +12,9 @@
 	padding-bottom: 17px;
 
 	.button {
-		background: #dfe2e4;
-		border-radius: 6px;
-		border: none;
-		box-sizing: border-box;
 		padding: 0px;
+		width: 40px;
+		height: 40px;
 	}
 	.icon {
 		display: block;

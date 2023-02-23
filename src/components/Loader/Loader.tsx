@@ -15,7 +15,7 @@ export type LoaderProps = {
 	className?: string;
 };
 
-export const Loader: React.FC<LoaderProps> = ({
+const Loader: React.FC<LoaderProps> = ({
 	loading = true,
 	size = LoaderSize.m,
 	className,
@@ -35,3 +35,5 @@ export const Loader: React.FC<LoaderProps> = ({
 		</>
 	);
 };
+
+export default Loader;
