@@ -1,5 +1,10 @@
-@import "./CircularStd/fonts";
-@import "./reset.scss";
+@import "@assets/fonts/CircularStd/fonts";
+@import "./reset";
+@import "./colors";
+
+html {
+	font-family: "Circular Std";
+}
 
 .container {
 	max-width: 375px;

@@ -1,0 +1,93 @@
+.wrapper {
+	.control {
+		display: flex;
+		align-items: center;
+		margin-top: 17px;
+		margin-bottom: 16px;
+		.arrow {
+			cursor: pointer;
+		}
+		.image {
+			margin-left: 16px;
+			margin-right: 8px;
+			width: 24px;
+			height: 24px;
+		}
+
+		.name {
+			font-weight: 500;
+			// font-style: normal;
+			font-size: 16px;
+			line-height: 20px;
+			color: #212529;
+			margin-right: 12px;
+
+			&_symbol {
+				font-size: 10px;
+				line-height: 13px;
+				color: #6c757d;
+			}
+		}
+
+		.btn {
+			background: none;
+			border: none;
+			padding: 0px;
+			cursor: pointer;
+			.star {
+				vertical-align: middle;
+			}
+		}
+	}
+
+	.price {
+		font-weight: 500;
+		font-size: 24px;
+		line-height: 30px;
+
+		color: #212529;
+		.price_change {
+			font-weight: 400;
+			font-size: 16px;
+			line-height: 20px;
+			color: #21bf73;
+			margin-left: 12px;
+
+			&_red {
+				color: red;
+			}
+		}
+	}
+
+	.list {
+		.item {
+			display: flex;
+			justify-content: space-between;
+			padding: 11px 0px;
+			border-bottom: 1px solid #dfe2e4;
+		}
+	}
+
+	.description {
+		margin: 21px 0px;
+	}
+
+	.text {
+		font-weight: 450;
+		font-size: 14px;
+		line-height: 18px;
+		color: #212529;
+
+		&_grey {
+			color: #6c757d;
+		}
+
+		&_heading {
+			font-weight: 500;
+			font-size: 16px;
+			line-height: 20px;
+			color: #6c757d;
+			margin-bottom: 8px;
+		}
+	}
+}

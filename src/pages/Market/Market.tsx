@@ -37,7 +37,7 @@ const Market: FC = () => {
 			<main className={styles.main}>
 				<div className={styles.control}>
 					<div className={cn("container", styles.block)}>
-						<p className={styles.text}>Coins</p>
+						<h1 className={styles.text}>Coins</h1>
 						<MultiDropdown onChange={() => {}} value={[]} />
 					</div>
 					<Filters activeFilter="Gainer" className="container" />

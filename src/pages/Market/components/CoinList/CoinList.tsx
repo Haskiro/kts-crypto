@@ -46,7 +46,7 @@ const CoinList: FC<CoinListProps> = ({ coinList }) => {
 								>
 									{priceChange > 0 ? "+" : ""}
 									{changeFormatter.format(
-										coin.price_change_percentage_24h
+										coin.price_change_percentage_24h / 100
 									)}
 								</p>
 							</div>
