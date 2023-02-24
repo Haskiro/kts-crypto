@@ -3,7 +3,7 @@ import React from "react";
 import Loader, { LoaderSize } from "@components/Loader";
 import cn from "classnames";
 
-import "./Button.scss";
+import styles from "./Button.module.scss";
 
 export type ButtonProps = React.PropsWithChildren<{
 	/**
@@ -24,15 +24,15 @@ const Button: React.FC<ButtonProps> = (props) => {
 	} = props;
 	return (
 		<button
-			className={cn("button", {
-				button_disabled: disabled || loading,
+			className={cn(styles.button, {
+				[styles.button_disabled]: disabled || loading,
 				[className!]: className,
 			})}
 			disabled={disabled || loading}
 			{...otherProps}
 		>
 			{loading && (
-				<Loader size={LoaderSize.s} className="button__loader" />
+				<Loader size={LoaderSize.s} className={styles.button__loader} />
 			)}
 			{children}
 		</button>

@@ -1,6 +1,7 @@
 import { FC, useEffect, useRef } from "react";
 
 import { ReactComponent as SearchIcon } from "@assets/icons/search.svg";
+import ErrorMessage from "@components/ErrorMessage";
 import WithLoader from "@components/WithLoader";
 import cn from "classnames";
 import InfiniteScroll from "react-infinite-scroll-component";
@@ -43,31 +44,37 @@ const Market: FC = () => {
 					<Filters activeFilter="Gainer" className="container" />
 				</div>
 				<div className={cn("container", styles.content)}>
-					<InfiniteScroll
-						dataLength={coinList.length} //This is important field to render the next data
-						next={() => fetchCoins(page)}
-						hasMore={hasMore}
-						loader={
-							process === "loading" && (
-								<WithLoader loading={true}>
-									<div
-										style={{
-											height: "100px",
-											width: "100%",
-											position: "relative",
-										}}
-									></div>
-								</WithLoader>
-							)
-						}
-						endMessage={
-							<p style={{ textAlign: "center" }}>
-								<b>Yay! You have seen it all</b>
-							</p>
-						}
-					>
-						<CoinList coinList={coinList} />
-					</InfiniteScroll>
+					{process === "error" ? (
+						<ErrorMessage />
+					) : (
+						<>
+							<InfiniteScroll
+								dataLength={coinList.length} //This is important field to render the next data
+								next={() => fetchCoins(page)}
+								hasMore={hasMore}
+								loader={
+									process === "loading" && (
+										<WithLoader loading={true}>
+											<div
+												style={{
+													height: "100px",
+													width: "100%",
+													position: "relative",
+												}}
+											></div>
+										</WithLoader>
+									)
+								}
+								endMessage={
+									<p style={{ textAlign: "center" }}>
+										<b>Yay! You have seen it all</b>
+									</p>
+								}
+							>
+								<CoinList coinList={coinList} />
+							</InfiniteScroll>
+						</>
+					)}
 				</div>
 			</main>
 		</div>

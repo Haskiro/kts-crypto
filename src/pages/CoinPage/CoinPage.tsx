@@ -2,6 +2,7 @@ import { FC, ReactNode, useEffect } from "react";
 
 import { ReactComponent as GoBackArrow } from "@assets/icons/goBackArrow.svg";
 import { ReactComponent as Star } from "@assets/icons/star.svg";
+import ErrorMessage from "@components/ErrorMessage";
 import Loader from "@components/Loader";
 import WithLoader from "@components/WithLoader";
 import { _transformCoinData } from "@utils/transformCoinData";
@@ -32,9 +33,7 @@ const CoinPage: FC = () => {
 					</div>
 				</WithLoader>
 			)}
-			{process === "error" && (
-				<h2 style={{ textAlign: "center" }}>Error</h2>
-			)}
+			{process === "error" && <ErrorMessage />}
 			{process === "succeeded" && (
 				<>
 					<div className={styles.control}>
