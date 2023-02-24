@@ -1,7 +1,8 @@
 import React from "react";
 
-import "./Loader.scss";
 import cn from "classnames";
+
+import styles from "./Loader.module.scss";
 
 export enum LoaderSize {
 	s = "s",
@@ -24,10 +25,10 @@ const Loader: React.FC<LoaderProps> = ({
 		<>
 			{loading && (
 				<span
-					className={cn("loader", {
-						large: size === "l",
-						medium: size === "m",
-						small: size === "s",
+					className={cn(styles.loader, {
+						[styles.large]: size === "l",
+						[styles.medium]: size === "m",
+						[styles.small]: size === "s",
 						[className!]: className,
 					})}
 				></span>

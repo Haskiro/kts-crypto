@@ -58,16 +58,6 @@
 			}
 		}
 	}
-
-	.list {
-		.item {
-			display: flex;
-			justify-content: space-between;
-			padding: 11px 0px;
-			border-bottom: 1px solid #dfe2e4;
-		}
-	}
-
 	.description {
 		margin: 21px 0px;
 	}
@@ -89,5 +79,10 @@
 			color: #6c757d;
 			margin-bottom: 8px;
 		}
+	}
+
+	.loading_block {
+		height: 200px;
+		padding-top: 17px;
 	}
 }

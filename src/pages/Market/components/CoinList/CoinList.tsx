@@ -1,8 +1,7 @@
 import { FC } from "react";
 
 import { ICoinListItem } from "@interfaces/coinListItem.interface";
-import { changeFormatter } from "@utils/changeFormater";
-import { priceFormatter } from "@utils/priceFormater";
+import { changePercentageFormatter, priceFormatter } from "@utils/formatters";
 import cn from "classnames";
 import { Link } from "react-router-dom";
 
@@ -45,9 +44,10 @@ const CoinList: FC<CoinListProps> = ({ coinList }) => {
 									)}
 								>
 									{priceChange > 0 ? "+" : ""}
-									{changeFormatter.format(
+									{changePercentageFormatter.format(
 										coin.price_change_percentage_24h / 100
 									)}
+									%
 								</p>
 							</div>
 						</Card>

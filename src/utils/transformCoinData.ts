@@ -1,8 +1,11 @@
 import { ISingleCoin } from "@interfaces/singleCoin.interface";
 
-import { capFormatter } from "./capFormatter";
-import { changeFormatter } from "./changeFormater";
-import { priceFormatter } from "./priceFormater";
+import {
+	capFormatter,
+	changeCurrencyFormatter,
+	priceFormatter,
+	changePercentageFormatter,
+} from "./formatters";
 
 export const _transformCoinData = (coin: ISingleCoin) => {
 	return {
@@ -12,20 +15,41 @@ export const _transformCoinData = (coin: ISingleCoin) => {
 		current_price: priceFormatter.format(
 			coin.market_data.current_price.usd
 		),
-		price_change_in_currency:
-			coin.market_data.price_change_24h_in_currency.usd,
-		price_change_percentage: changeFormatter.format(
-			coin.market_data.price_change_percentage_24h / 100
+		price_change_in_currency: Number(
+			changeCurrencyFormatter.format(
+				coin.market_data.price_change_24h_in_currency.usd
+			)
 		),
-		market_cap: capFormatter.format(coin.market_data.market_cap.usd),
-		fully_diluted_valuation: capFormatter.format(
-			coin.market_data.fully_diluted_valuation.usd
+		price_change_percentage: Number(
+			changePercentageFormatter.format(
+				coin.market_data.price_change_percentage_24h / 100
+			)
 		),
-		circulating_supply: capFormatter.format(
-			coin.market_data.circulating_supply
-		),
-		total_supply: capFormatter.format(coin.market_data.total_supply),
-		max_supply: capFormatter.format(coin.market_data.max_supply),
+		table: [
+			{
+				name: "Market Cap",
+				value: capFormatter.format(coin.market_data.market_cap.usd),
+			},
+			{
+				name: "Fully Diluted Valuation",
+				value: capFormatter.format(
+					coin.market_data.fully_diluted_valuation.usd
+				),
+			},
+			{
+				name: "Circulating Supply",
+				value: capFormatter.format(coin.market_data.circulating_supply),
+			},
+			{
+				name: "Total Supply",
+				value: capFormatter.format(coin.market_data.total_supply),
+			},
+			{
+				name: "Max Supply",
+				value: capFormatter.format(coin.market_data.max_supply),
+			},
+		],
+
 		description: coin.description.en,
 	};
 };

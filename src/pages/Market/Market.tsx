@@ -1,28 +1,28 @@
-import { FC, useEffect, useState } from "react";
+import { FC, useEffect, useRef } from "react";
 
 import { ReactComponent as SearchIcon } from "@assets/icons/search.svg";
-import { API_ENDPOINTS } from "@configs/api";
-import { useHttp } from "@hooks/useHttp";
-import { ICoinListItem } from "@interfaces/coinListItem.interface";
+import WithLoader from "@components/WithLoader";
 import cn from "classnames";
+import InfiniteScroll from "react-infinite-scroll-component";
 
 import Button from "./components/Button";
 import CoinList from "./components/CoinList";
 import Filters from "./components/Filters";
 import Input from "./components/Input";
 import MultiDropdown from "./components/MultiDropdown";
+import { useMarket } from "./hooks/useMarket";
 import styles from "./Market.module.scss";
 
 const Market: FC = () => {
-	const [coinList, setCoinList] = useState<ICoinListItem[]>([]);
-	const { request, process, setProcess, clearError } = useHttp();
-	const [page, setPage] = useState<number>(1);
+	const { coinList, fetchCoins, hasMore, page, process } = useMarket();
+	const firstRender = useRef<boolean>(true);
 
 	useEffect(() => {
-		request({
-			url: API_ENDPOINTS.COINS(page),
-		}).then((data) => setCoinList(data));
-		setProcess("succeeded");
+		if (firstRender.current) {
+			firstRender.current = false;
+			fetchCoins(page);
+		}
+
 		// eslint-disable-next-line
 	}, []);
 
@@ -43,7 +43,31 @@ const Market: FC = () => {
 					<Filters activeFilter="Gainer" className="container" />
 				</div>
 				<div className={cn("container", styles.content)}>
-					<CoinList coinList={coinList} />
+					<InfiniteScroll
+						dataLength={coinList.length} //This is important field to render the next data
+						next={() => fetchCoins(page)}
+						hasMore={hasMore}
+						loader={
+							process === "loading" && (
+								<WithLoader loading={true}>
+									<div
+										style={{
+											height: "100px",
+											width: "100%",
+											position: "relative",
+										}}
+									></div>
+								</WithLoader>
+							)
+						}
+						endMessage={
+							<p style={{ textAlign: "center" }}>
+								<b>Yay! You have seen it all</b>
+							</p>
+						}
+					>
+						<CoinList coinList={coinList} />
+					</InfiniteScroll>
 				</div>
 			</main>
 		</div>

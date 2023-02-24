@@ -1,6 +1,6 @@
 import { FC } from "react";
 
-import CoinPage from "@pages/CoinPage/components/CoinPage";
+import CoinPage from "@pages/CoinPage";
 import Market from "@pages/Market";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
