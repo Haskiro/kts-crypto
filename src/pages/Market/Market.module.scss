@@ -1,3 +1,5 @@
+@import "@styles/colors.scss";
+
 .wrapper {
 	background: #f8f9fa;
 	min-height: 100vh;
@@ -26,7 +28,7 @@
 	width: 100%;
 	.control {
 		margin-bottom: 15px;
-		border-bottom: 1px solid #dfe2e4;
+		border-bottom: 1px solid $border;
 		.block {
 			display: flex;
 			gap: 69px;

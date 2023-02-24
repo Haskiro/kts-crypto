@@ -1,3 +1,5 @@
+@import "@styles/colors.scss";
+
 .wrapper {
 	.control {
 		display: flex;
@@ -19,13 +21,13 @@
 			// font-style: normal;
 			font-size: 16px;
 			line-height: 20px;
-			color: #212529;
+			color: $text;
 			margin-right: 12px;
 
 			&_symbol {
 				font-size: 10px;
 				line-height: 13px;
-				color: #6c757d;
+				color: $text_secondary;
 			}
 		}
 
@@ -45,16 +47,16 @@
 		font-size: 24px;
 		line-height: 30px;
 
-		color: #212529;
+		color: $text;
 		.price_change {
 			font-weight: 400;
 			font-size: 16px;
 			line-height: 20px;
-			color: #21bf73;
+			color: $green;
 			margin-left: 12px;
 
 			&_red {
-				color: red;
+				color: $red;
 			}
 		}
 	}
@@ -66,17 +68,17 @@
 		font-weight: 450;
 		font-size: 14px;
 		line-height: 18px;
-		color: #212529;
+		color: $text;
 
 		&_grey {
-			color: #6c757d;
+			color: $text_secondary;
 		}
 
 		&_heading {
 			font-weight: 500;
 			font-size: 16px;
 			line-height: 20px;
-			color: #6c757d;
+			color: $text_secondary;
 			margin-bottom: 8px;
 		}
 	}

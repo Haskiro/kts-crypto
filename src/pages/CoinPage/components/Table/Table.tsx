@@ -1,6 +1,6 @@
 import { FC } from "react";
 
-import { TableItem } from "@pages/CoinPage/hooks/useCoinPage";
+import { TableItem } from "@pages/CoinPage/types/Coin.type";
 import cn from "classnames";
 
 import styles from "./Table.module.scss";

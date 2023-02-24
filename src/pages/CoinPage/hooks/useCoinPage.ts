@@ -4,21 +4,7 @@ import { API_ENDPOINTS } from "@configs/api";
 import { useHttp } from "@hooks/useHttp";
 import { _transformCoinData } from "@utils/transformCoinData";
 
-export type TableItem = {
-	name: string;
-	value: string;
-};
-
-export type Coin = {
-	name: string;
-	symbol: string;
-	image: string;
-	current_price: string;
-	price_change_in_currency: number;
-	price_change_percentage: number;
-	table: TableItem[];
-	description: string;
-};
+import { Coin } from "../types/Coin.type";
 
 export const useCoinPage = () => {
 	const { request, process, setProcess } = useHttp();

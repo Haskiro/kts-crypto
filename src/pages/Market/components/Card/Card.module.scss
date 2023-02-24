@@ -1,3 +1,5 @@
+@import "@styles/colors.scss";
+
 .card {
 	display: flex;
 	justify-content: space-between;
@@ -29,13 +31,13 @@
 		font-weight: 450;
 		font-size: 16px;
 		line-height: 20px;
-		color: #212529;
+		color: $text;
 		margin: 0px;
 
 		&.subtitle {
 			font-size: 12px;
 			line-height: 15px;
-			color: #6c757d;
+			color: $text_secondary;
 		}
 	}
 }

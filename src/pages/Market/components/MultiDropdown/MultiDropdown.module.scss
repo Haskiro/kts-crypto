@@ -1,9 +1,11 @@
+@import "@styles/colors.scss";
+
 .multidropdown {
 	position: relative;
 
 	.field {
 		background: #ffffff;
-		border: 0.5px solid #dfe2e4;
+		border: 0.5px solid $border;
 		border-radius: 12px;
 		box-sizing: border-box;
 		padding: 5px 9px 5px 8px;
@@ -14,16 +16,16 @@
 		cursor: pointer;
 
 		&:focus {
-			border-color: #6c757d;
+			border-color: $text_secondary;
 		}
 
 		&_disabled {
-			color: #6c757d;
+			color: $text_secondary;
 			background: #f8f9fa;
 			cursor: initial;
 
 			&:focus {
-				border-color: #dfe2e4;
+				border-color: $border;
 				cursor: initial;
 			}
 		}
@@ -44,7 +46,7 @@
 		color: #343a40;
 
 		&_placeholder {
-			color: #6c757d;
+			color: $text_secondary;
 		}
 	}
 

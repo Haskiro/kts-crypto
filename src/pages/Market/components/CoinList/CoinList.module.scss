@@ -1,3 +1,5 @@
+@import "@styles/colors.scss";
+
 .list {
 	display: flex;
 	flex-direction: column;
@@ -23,10 +25,10 @@
 					font-weight: 500;
 					font-size: 10px;
 					line-height: 13px;
-					color: #21bf73;
+					color: $green;
 
 					&_red {
-						color: red;
+						color: $red;
 					}
 				}
 			}

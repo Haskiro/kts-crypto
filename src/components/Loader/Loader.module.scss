@@ -1,10 +1,12 @@
+@import "@styles/colors.scss";
+
 .loader {
 	box-sizing: border-box;
-	border-top-color: #6c757d;
-	border-left-color: #6c757d;
+	border-top-color: $text_secondary;
+	border-left-color: $text_secondary;
 	animation: spinner 1000ms linear infinite;
 	border-bottom-color: transparent;
-	border-right-color: #6c757d;
+	border-right-color: $text_secondary;
 	border-style: solid;
 	border-radius: 50%;
 	display: block;

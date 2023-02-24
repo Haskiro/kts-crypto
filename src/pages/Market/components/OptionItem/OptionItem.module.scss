@@ -1,7 +1,9 @@
+@import "@styles/colors.scss";
+
 .option {
 	border-width: 0px 0px 0.5px;
 	border-style: solid;
-	border-color: #dfe2e4;
+	border-color: $border;
 	padding: 5px 8px 4px;
 	font-family: "Circular Std";
 	font-weight: 450;
