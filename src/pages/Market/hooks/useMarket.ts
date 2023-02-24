@@ -17,7 +17,7 @@ export const useMarket = () => {
 		})
 			.then((data) => {
 				setCoinList((prevState) => [...prevState, ...data]);
-				if (data.length < 7) setHasMore(false);
+				if (data.length < 8) setHasMore(false);
 			})
 			.then(() => setProcess("succeeded"))
 			.then(() => setPage((prevState) => prevState + 1));
