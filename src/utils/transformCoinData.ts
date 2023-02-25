@@ -1,52 +1,64 @@
 import { ISingleCoin } from "@interfaces/singleCoin.interface";
 
-import {
-	capFormatter,
-	changeCurrencyFormatter,
-	priceFormatter,
-	changePercentageFormatter,
-} from "./formatters";
+import { changeFormatter, priceFormatter } from "./formatters";
 
-export const _transformCoinData = (coin: ISingleCoin) => {
+export const _transformCoinData = (coin: ISingleCoin, currency: string) => {
 	return {
 		name: coin.name,
 		symbol: coin.symbol,
 		image: coin.image.thumb,
-		current_price: priceFormatter.format(
-			coin.market_data.current_price.usd
-		),
+		current_price: priceFormatter(coin.market_data.current_price.usd, {
+			maxDigits: 2,
+			currency: currency,
+		}),
 		price_change_in_currency: Number(
-			changeCurrencyFormatter.format(
-				coin.market_data.price_change_24h_in_currency.usd
-			)
+			changeFormatter(coin.market_data.price_change_24h_in_currency.usd, {
+				maxDigits: 3,
+			})
 		),
 		price_change_percentage: Number(
-			changePercentageFormatter.format(
-				coin.market_data.price_change_percentage_24h / 100
+			changeFormatter(
+				coin.market_data.price_change_percentage_24h / 100,
+				{
+					maxDigits: 3,
+				}
 			)
 		),
 		table: [
 			{
 				name: "Market Cap",
-				value: capFormatter.format(coin.market_data.market_cap.usd),
+				value: priceFormatter(coin.market_data.market_cap.usd, {
+					maxDigits: 0,
+					currency: currency,
+				}),
 			},
 			{
 				name: "Fully Diluted Valuation",
-				value: capFormatter.format(
-					coin.market_data.fully_diluted_valuation.usd
+				value: priceFormatter(
+					coin.market_data.fully_diluted_valuation.usd,
+					{
+						maxDigits: 0,
+						currency: currency,
+					}
 				),
 			},
 			{
 				name: "Circulating Supply",
-				value: capFormatter.format(coin.market_data.circulating_supply),
+				value: priceFormatter(coin.market_data.circulating_supply, {
+					maxDigits: 0,
+				}),
 			},
 			{
 				name: "Total Supply",
-				value: capFormatter.format(coin.market_data.total_supply),
+				value: priceFormatter(coin.market_data.total_supply, {
+					maxDigits: 0,
+				}),
 			},
 			{
 				name: "Max Supply",
-				value: capFormatter.format(coin.market_data.max_supply),
+				value: priceFormatter(coin.market_data.max_supply, {
+					maxDigits: 0,
+				}),
 			},
 		],
 

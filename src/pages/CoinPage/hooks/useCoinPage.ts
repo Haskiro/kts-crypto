@@ -14,7 +14,7 @@ export const useCoinPage = () => {
 		request({
 			url: API_ENDPOINTS.SINGLE_COIN(id!),
 		})
-			.then((data) => setCoin(_transformCoinData(data)))
+			.then((data) => setCoin(_transformCoinData(data, "usd")))
 			.then(() => setProcess("succeeded"));
 	};
 

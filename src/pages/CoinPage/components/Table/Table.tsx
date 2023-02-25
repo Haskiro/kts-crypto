@@ -17,7 +17,7 @@ const Table: FC<TableProps> = ({ table }) => {
 					<p className={cn(styles.text, styles.text_grey)}>
 						{item.name}
 					</p>
-					<p className={styles.text}>${item.value}</p>
+					<p className={styles.text}>{item.value}</p>
 				</li>
 			))}
 		</ul>

@@ -1,7 +1,7 @@
 import { FC } from "react";
 
 import { ICoinListItem } from "@interfaces/coinListItem.interface";
-import { changePercentageFormatter, priceFormatter } from "@utils/formatters";
+import { changeFormatter, priceFormatter } from "@utils/formatters";
 import cn from "classnames";
 import { Link } from "react-router-dom";
 
@@ -31,7 +31,10 @@ const CoinList: FC<CoinListProps> = ({ coinList }) => {
 						>
 							<div className={styles.finance}>
 								<p className={styles.price}>
-									{priceFormatter.format(coin.current_price)}
+									{priceFormatter(coin.current_price, {
+										maxDigits: 2,
+										currency: "usd",
+									})}
 								</p>
 								<p
 									className={cn(
@@ -44,8 +47,9 @@ const CoinList: FC<CoinListProps> = ({ coinList }) => {
 									)}
 								>
 									{priceChange > 0 ? "+" : ""}
-									{changePercentageFormatter.format(
-										coin.price_change_percentage_24h / 100
+									{changeFormatter(
+										coin.price_change_percentage_24h / 100,
+										{ maxDigits: 2 }
 									)}
 									%
 								</p>
