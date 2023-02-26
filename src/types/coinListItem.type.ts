@@ -1,4 +1,4 @@
-export interface ICoinListItem {
+export type CoinListItem = {
 	id: string;
 	symbol: string;
 	name: string;
@@ -25,4 +25,4 @@ export interface ICoinListItem {
 	atl_date: Date;
 	roi?: any;
 	last_updated: Date;
-}
+};

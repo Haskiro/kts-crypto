@@ -1,8 +1,8 @@
-import { ISingleCoin } from "@interfaces/singleCoin.interface";
+import { SingleCoin } from "src/types/singleCoin.type";
 
 import { changeFormatter, priceFormatter } from "./formatters";
 
-export const _transformCoinData = (coin: ISingleCoin, currency: string) => {
+export const _transformCoinData = (coin: SingleCoin, currency: string) => {
 	return {
 		name: coin.name,
 		symbol: coin.symbol,

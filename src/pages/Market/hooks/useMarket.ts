@@ -2,10 +2,10 @@ import { useState } from "react";
 
 import { API_ENDPOINTS } from "@configs/api";
 import { useHttp } from "@hooks/useHttp";
-import { ICoinListItem } from "@interfaces/coinListItem.interface";
+import { CoinListItem } from "src/types/coinListItem.type";
 
 export const useMarket = () => {
-	const [coinList, setCoinList] = useState<ICoinListItem[]>([]);
+	const [coinList, setCoinList] = useState<CoinListItem[]>([]);
 	const { request, process, setProcess, clearError } = useHttp();
 	const [page, setPage] = useState<number>(1);
 	const [hasMore, setHasMore] = useState<boolean>(true);

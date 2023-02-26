@@ -8,7 +8,6 @@
 			"@styles/*": ["src/styles/*"],
 			"@utils/*": ["src/utils/*"],
 			"@store/*": ["src/store/*"],
-			"@interfaces/*": ["src/interfaces/*"],
 			"@hooks/*": ["src/hooks/*"],
 			"@configs/*": ["src/configs/*"]
 		}

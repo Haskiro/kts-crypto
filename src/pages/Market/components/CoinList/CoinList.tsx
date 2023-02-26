@@ -1,15 +1,15 @@
 import { FC } from "react";
 
-import { ICoinListItem } from "@interfaces/coinListItem.interface";
 import { changeFormatter, priceFormatter } from "@utils/formatters";
 import cn from "classnames";
 import { Link } from "react-router-dom";
+import { CoinListItem } from "src/types/coinListItem.type";
 
 import styles from "./CoinList.module.scss";
 import Card from "../Card";
 
 type CoinListProps = {
-	coinList: ICoinListItem[];
+	coinList: CoinListItem[];
 };
 
 const CoinList: FC<CoinListProps> = ({ coinList }) => {

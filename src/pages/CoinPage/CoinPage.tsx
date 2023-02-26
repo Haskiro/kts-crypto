@@ -66,7 +66,7 @@ const CoinPage: FC = () => {
 							})}
 						>
 							{coin!.price_change_in_currency! > 0 ? "+" : ""}
-							{coin!.price_change_in_currency!} (
+							{coin!.price_change_in_currency} (
 							{Math.abs(coin!.price_change_percentage)}%)
 						</span>
 					</p>
@@ -78,7 +78,7 @@ const CoinPage: FC = () => {
 						<p
 							className={styles.text}
 							dangerouslySetInnerHTML={{
-								__html: coin?.description!,
+								__html: coin!.description,
 							}}
 						></p>
 					</section>
