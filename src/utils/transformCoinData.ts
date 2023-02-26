@@ -20,7 +20,7 @@ export const _transformCoinData = (coin: SingleCoin, currency: string) => {
 			changeFormatter(
 				coin.market_data.price_change_percentage_24h / 100,
 				{
-					maxDigits: 3,
+					maxDigits: 2,
 				}
 			)
 		),
