@@ -1,0 +1,38 @@
+.checkbox {
+  &_disabled &__custom {
+    opacity: 0.5;
+
+    &:hover {
+      border-color: #dfe2e4;
+    }
+  }
+
+  &__origin:checked + &__custom::before {
+    opacity: 1;
+  }
+
+  &__custom {
+    display: block;
+    background: #ffffff;
+    border: 1px solid #dfe2e4;
+    border-radius: 4px;
+    width: 25px;
+    height: 25px;
+    // box-sizing: border-box;
+    position: relative;
+    cursor: pointer;
+
+    &:hover {
+      border-color: #6c757d;
+    }
+
+    &::before {
+      content: url('../../assets/icons/tick.svg');
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+    }
+  }
+}

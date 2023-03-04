@@ -1,0 +1,12 @@
+@import "@assets/fonts/CircularStd/fonts";
+@import "./reset";
+
+html {
+	font-family: "Circular Std";
+}
+
+.container {
+	max-width: 375px;
+	margin: 0px auto;
+	padding: 0px 16px;
+}

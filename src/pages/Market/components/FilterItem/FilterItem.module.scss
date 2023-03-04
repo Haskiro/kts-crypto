@@ -1,0 +1,15 @@
+@import "@styles/colors.scss";
+
+.filter {
+	font-family: "Circular Std";
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 18px;
+	color: $text_secondary;
+	padding-bottom: 1px;
+	cursor: pointer;
+	&_active {
+		color: #0063f5;
+		border-bottom: 3px solid #0063f5;
+	}
+}

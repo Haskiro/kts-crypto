@@ -1,0 +1,18 @@
+@import "@styles/colors.scss";
+
+.list {
+	.item {
+		display: flex;
+		justify-content: space-between;
+		padding: 11px 0px;
+		border-bottom: 1px solid $border;
+	}
+	.text {
+		font-weight: 450;
+		font-size: 14px;
+		line-height: 18px;
+		color: $text &_grey {
+			color: $text_secondary;
+		}
+	}
+}

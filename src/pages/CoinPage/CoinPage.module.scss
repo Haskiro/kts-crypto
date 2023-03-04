@@ -1,0 +1,90 @@
+@import "@styles/colors.scss";
+
+.wrapper {
+	.control {
+		display: flex;
+		align-items: center;
+		margin-top: 17px;
+		margin-bottom: 16px;
+		.arrow {
+			cursor: pointer;
+		}
+		.image {
+			margin-left: 16px;
+			margin-right: 8px;
+			width: 24px;
+			height: 24px;
+		}
+
+		.name {
+			font-weight: 500;
+			// font-style: normal;
+			font-size: 16px;
+			line-height: 20px;
+			color: $text;
+			margin-right: 12px;
+
+			&_symbol {
+				font-size: 10px;
+				line-height: 13px;
+				color: $text_secondary;
+			}
+		}
+
+		.btn {
+			background: none;
+			border: none;
+			padding: 0px;
+			cursor: pointer;
+			.star {
+				vertical-align: middle;
+			}
+		}
+	}
+
+	.price {
+		font-weight: 500;
+		font-size: 24px;
+		line-height: 30px;
+
+		color: $text;
+		.price_change {
+			font-weight: 400;
+			font-size: 16px;
+			line-height: 20px;
+			color: $green;
+			margin-left: 12px;
+
+			&_red {
+				color: $red;
+			}
+		}
+	}
+	.description {
+		margin: 21px 0px;
+	}
+
+	.text {
+		font-weight: 450;
+		font-size: 14px;
+		line-height: 18px;
+		color: $text;
+
+		&_grey {
+			color: $text_secondary;
+		}
+
+		&_heading {
+			font-weight: 500;
+			font-size: 16px;
+			line-height: 20px;
+			color: $text_secondary;
+			margin-bottom: 8px;
+		}
+	}
+
+	.loading_block {
+		height: 200px;
+		padding-top: 17px;
+	}
+}

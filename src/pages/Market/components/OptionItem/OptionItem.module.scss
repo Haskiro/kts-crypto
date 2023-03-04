@@ -1,0 +1,19 @@
+@import "@styles/colors.scss";
+
+.option {
+	border-width: 0px 0px 0.5px;
+	border-style: solid;
+	border-color: $border;
+	padding: 5px 8px 4px;
+	font-family: "Circular Std";
+	font-weight: 450;
+	font-size: 12px;
+	line-height: 15px;
+	color: #343a40;
+	&:last-of-type {
+		border: none;
+	}
+	&_checked {
+		background: #f8f9fa;
+	}
+}

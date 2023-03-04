@@ -1,0 +1,39 @@
+@import "@styles/colors.scss";
+
+.loader {
+	box-sizing: border-box;
+	border-top-color: $text_secondary;
+	border-left-color: $text_secondary;
+	animation: spinner 1000ms linear infinite;
+	border-bottom-color: transparent;
+	border-right-color: $text_secondary;
+	border-style: solid;
+	border-radius: 50%;
+	display: block;
+	transform: rotate(-45deg);
+
+	&.large {
+		width: 60px;
+		height: 60px;
+		border-width: 6px;
+	}
+	&.medium {
+		width: 40px;
+		height: 40px;
+		border-width: 4px;
+	}
+	&.small {
+		width: 20px;
+		height: 20px;
+		border-width: 2px;
+	}
+}
+
+@keyframes spinner {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
